@@ -1,0 +1,164 @@
+<% if @dorm.errors.any? %>
+  <% @dorm.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h1>Add Dorm</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_dorm" class="form-horizontal">
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">
+          Name
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @dorm.name %>">
+        </div>
+      </div>
+
+      <!-- Label and input for address -->
+      <div class="form-group">
+        <label for="address" class="col-sm-2 control-label">
+          Address
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="address" name="address" placeholder="Address" class="form-control" value="<%= @dorm.address %>">
+        </div>
+      </div>
+
+      <!-- Label and input for size -->
+      <div class="form-group">
+        <label for="size" class="col-sm-2 control-label">
+          Size
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="size" name="size" placeholder="Size" class="form-control" value="<%= @dorm.size %>">
+        </div>
+      </div>
+
+      <!-- Label and input for gender_i -->
+      <div class="form-group">
+        <label for="gender_i" class="col-sm-2 control-label">
+          Gender i
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="gender_i" name="gender_i" placeholder="Gender i" class="form-control" value="<%= @dorm.gender_i %>">
+        </div>
+      </div>
+
+      <!-- Label and input for crit_1 -->
+      <div class="form-group">
+        <label for="crit_1" class="col-sm-2 control-label">
+          Crit 1
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="crit_1" name="crit_1" placeholder="Crit 1" class="form-control" value="<%= @dorm.crit_1 %>">
+        </div>
+      </div>
+
+      <!-- Label and input for crit_2 -->
+      <div class="form-group">
+        <label for="crit_2" class="col-sm-2 control-label">
+          Crit 2
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="crit_2" name="crit_2" placeholder="Crit 2" class="form-control" value="<%= @dorm.crit_2 %>">
+        </div>
+      </div>
+
+      <!-- Label and input for crit_3 -->
+      <div class="form-group">
+        <label for="crit_3" class="col-sm-2 control-label">
+          Crit 3
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="crit_3" name="crit_3" placeholder="Crit 3" class="form-control" value="<%= @dorm.crit_3 %>">
+        </div>
+      </div>
+
+      <!-- Label and input for crit_4 -->
+      <div class="form-group">
+        <label for="crit_4" class="col-sm-2 control-label">
+          Crit 4
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="crit_4" name="crit_4" placeholder="Crit 4" class="form-control" value="<%= @dorm.crit_4 %>">
+        </div>
+      </div>
+
+      <!-- Label and input for crit_5 -->
+      <div class="form-group">
+        <label for="crit_5" class="col-sm-2 control-label">
+          Crit 5
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="crit_5" name="crit_5" placeholder="Crit 5" class="form-control" value="<%= @dorm.crit_5 %>">
+        </div>
+      </div>
+
+      <!-- Label and input for crit_6 -->
+      <div class="form-group">
+        <label for="crit_6" class="col-sm-2 control-label">
+          Crit 6
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="crit_6" name="crit_6" placeholder="Crit 6" class="form-control" value="<%= @dorm.crit_6 %>">
+        </div>
+      </div>
+
+      <!-- Label and input for crit_7 -->
+      <div class="form-group">
+        <label for="crit_7" class="col-sm-2 control-label">
+          Crit 7
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="crit_7" name="crit_7" placeholder="Crit 7" class="form-control" value="<%= @dorm.crit_7 %>">
+        </div>
+      </div>
+
+      <!-- Label and input for crit_8 -->
+      <div class="form-group">
+        <label for="crit_8" class="col-sm-2 control-label">
+          Crit 8
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="crit_8" name="crit_8" placeholder="Crit 8" class="form-control" value="<%= @dorm.crit_8 %>">
+        </div>
+      </div>
+
+      <!-- Label and input for crit_9 -->
+      <div class="form-group">
+        <label for="crit_9" class="col-sm-2 control-label">
+          Crit 9
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="crit_9" name="crit_9" placeholder="Crit 9" class="form-control" value="<%= @dorm.crit_9 %>">
+        </div>
+      </div>
+
+      <!-- Label and input for crit_10 -->
+      <div class="form-group">
+        <label for="crit_10" class="col-sm-2 control-label">
+          Crit 10
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="crit_10" name="crit_10" placeholder="Crit 10" class="form-control" value="<%= @dorm.crit_10 %>">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input type="submit" value="Create Dorm" class="btn btn-primary">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

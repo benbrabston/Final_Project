@@ -1,0 +1,54 @@
+<div class="page-header">
+  <h1>M factors</h1>
+</div>
+
+<p><a href="/m_factors/new" class="btn btn-primary">Add a New M Factor</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Gender i</th>
+      <th>Factor 1</th>
+      <th>Factor 2</th>
+      <th>Factor 3</th>
+      <th>Factor 4</th>
+      <th>Factor 5</th>
+      <th>Factor 6</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @m_factors.each do |m_factor| %>
+      <tr>
+        <td><%= m_factor.student_id %></td>
+        <td><%= m_factor.gender_i %></td>
+        <td><%= m_factor.factor_1 %></td>
+        <td><%= m_factor.factor_2 %></td>
+        <td><%= m_factor.factor_3 %></td>
+        <td><%= m_factor.factor_4 %></td>
+        <td><%= m_factor.factor_5 %></td>
+        <td><%= m_factor.factor_6 %></td>
+        <td>
+          <a href="/m_factors/<%= m_factor.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/m_factors/<%= m_factor.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_m_factor/<%= m_factor.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
