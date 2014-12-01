@@ -13,15 +13,11 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new
-    @student.email = params[:email]
-    @student.email_end = params[:email_end]
     @student.first_name = params[:first_name]
     @student.last_name = params[:last_name]
-    @student.school = params[:school]
     @student.pref_location = params[:pref_location]
-    @student.gender_i = params[:gender_i]
+    @student.gender = params[:gender]
     @student.country = params[:country]
-    @student.dorm_id = params[:dorm_id]
 
     if @student.save
       redirect_to "/students", :notice => "Student created successfully."
@@ -38,14 +34,11 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
 
     @student.email = params[:email]
-    @student.email_end = params[:email_end]
     @student.first_name = params[:first_name]
     @student.last_name = params[:last_name]
-    @student.school = params[:school]
     @student.pref_location = params[:pref_location]
-    @student.gender_i = params[:gender_i]
+    @student.gender = params[:gender]
     @student.country = params[:country]
-    @student.dorm_id = params[:dorm_id]
 
     if @student.save
       redirect_to "/students", :notice => "Student updated successfully."

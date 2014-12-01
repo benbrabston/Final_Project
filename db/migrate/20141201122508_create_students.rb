@@ -7,7 +7,7 @@ class CreateStudents < ActiveRecord::Migration
       t.string :last_name
       t.string :school
       t.string :pref_location
-      t.integer :gender_i
+      t.string :gender
       t.string :country
       t.integer :dorm_id
 

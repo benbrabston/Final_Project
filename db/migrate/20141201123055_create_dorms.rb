@@ -5,7 +5,7 @@ class CreateDorms < ActiveRecord::Migration
       t.string :address
       t.string :location
       t.integer :size
-      t.integer :gender_i
+      t.string :gender
       t.integer :school_id
 
       t.timestamps

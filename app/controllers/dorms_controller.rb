@@ -17,7 +17,7 @@ class DormsController < ApplicationController
     @dorm.address = params[:address]
     @dorm.location = params[:location]
     @dorm.size = params[:size]
-    @dorm.gender_i = params[:gender_i]
+    @dorm.gender = params[:gender]
     @dorm.school_id = params[:school_id]
 
     if @dorm.save
@@ -38,7 +38,7 @@ class DormsController < ApplicationController
     @dorm.address = params[:address]
     @dorm.location = params[:location]
     @dorm.size = params[:size]
-    @dorm.gender_i = params[:gender_i]
+    @dorm.gender = params[:gender]
     @dorm.school_id = params[:school_id]
 
     if @dorm.save

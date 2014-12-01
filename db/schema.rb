@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20141201123124) do
     t.string   "address"
     t.string   "location"
     t.integer  "size"
-    t.integer  "gender_i"
+    t.string   "gender"
     t.integer  "school_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20141201123124) do
 
   create_table "f_factors", force: true do |t|
     t.integer  "student_id"
-    t.integer  "gender_i"
+    t.string   "gender"
     t.float    "factor_1"
     t.float    "factor_2"
     t.float    "factor_3"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20141201123124) do
 
   create_table "m_factors", force: true do |t|
     t.integer  "student_id"
-    t.integer  "gender_i"
+    t.string   "gender"
     t.float    "factor_1"
     t.float    "factor_2"
     t.float    "factor_3"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20141201123124) do
     t.string   "last_name"
     t.string   "school"
     t.string   "pref_location"
-    t.integer  "gender_i"
+    t.string   "gender"
     t.string   "country"
     t.integer  "dorm_id"
     t.datetime "created_at"

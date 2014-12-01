@@ -2,7 +2,7 @@ class CreateMFactors < ActiveRecord::Migration
   def change
     create_table :m_factors do |t|
       t.integer :student_id
-      t.integer :gender_i
+      t.string :gender
       t.float :factor_1
       t.float :factor_2
       t.float :factor_3
