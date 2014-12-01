@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Devise
+gem 'devise'
+
 # Add databases
 gem 'starter_generators', :git => "git://github.com/rbetina/starter_generators.git", :branch => "boothappdev"
 

@@ -6,6 +6,24 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+student_emails = [
+  "a@example.com",
+  "b@example.com",
+  "c@example.com",
+  "d@example.com",
+  "e@example.com",
+  "f@example.com",
+  "g@example.com",
+]
+
+student_emails.each do |email_new|
+  student = Student.new
+  student.email = email_new
+  student.password = "12345678"
+  student.password_confirmation = "12345678"
+  student.save
+end
+
 
 student_info = [
   {
@@ -53,10 +71,9 @@ student_info = [
 ]
 
 student_info.each do |student_hash|
-  p = Student.new
+  p = Student.find_by( :email => student_hash[:email] )
   p.first_name = student_hash[:first_name]
   p.last_name = student_hash[:last_name]
-  p.email = student_hash[:email]
   p.gender = student_hash[:gender]
 
   p.save

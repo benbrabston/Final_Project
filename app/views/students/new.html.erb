@@ -8,21 +8,14 @@
 <% end %>
 
 <div class="page-header">
-  <h1><%= @student.first_name %> <%= @student.last_name %> </h1>
+  <h1>Add Student</h1>
 </div>
 
 <div class="row">
   <div class="col-md-12">
-    <form action="/update_student/<%= @student.id %>" class="form-horizontal">
+    <form action="/create_student" class="form-horizontal">
       <!-- Label and input for email -->
       <div class="form-group">
-        <label for="email" class="col-sm-2 control-label">
-          Email
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="email" name="email" placeholder="Email" class="form-control" value="<%= @student.email %>">
-        </div>
-      </div>
 
       <!-- Label and input for first_name -->
       <div class="form-group">
@@ -74,7 +67,7 @@
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <input type="submit" value="Update Student" class="btn btn-primary">
+          <input type="submit" value="Create Student" class="btn btn-primary">
         </div>
       </div>
     </form>

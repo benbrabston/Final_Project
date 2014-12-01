@@ -5,9 +5,9 @@
 # Factors?
 
 Rails.application.routes.draw do
+  devise_for :students
+  root('statics#landing')
 
-  # Landing Page
-  get('/', { :controller => 'statics', :action => 'landing' })
   #------------------------------
 
   # Routes for the School resource:
