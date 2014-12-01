@@ -5,21 +5,26 @@
 # Factors?
 
 Rails.application.routes.draw do
-  # Routes for the Student resource:
+
+  # Landing Page
+  get('/', { :controller => 'statics', :action => 'landing' })
+  #------------------------------
+
+  # Routes for the School resource:
   # CREATE
-  get('/students/new', { :controller => 'students', :action => 'new' })
-  get('/create_student', { :controller => 'students', :action => 'create' })
+  get('/schools/new', { :controller => 'schools', :action => 'new' })
+  get('/create_school', { :controller => 'schools', :action => 'create' })
 
   # READ
-  get('/students', { :controller => 'students', :action => 'index' })
-  get('/students/:id', { :controller => 'students', :action => 'show' })
+  get('/schools', { :controller => 'schools', :action => 'index' })
+  get('/schools/:id', { :controller => 'schools', :action => 'show' })
 
   # UPDATE
-  get('/students/:id/edit', { :controller => 'students', :action => 'edit' })
-  get('/update_student/:id', { :controller => 'students', :action => 'update' })
+  get('/schools/:id/edit', { :controller => 'schools', :action => 'edit' })
+  get('/update_school/:id', { :controller => 'schools', :action => 'update' })
 
   # DELETE
-  get('/delete_student/:id', { :controller => 'students', :action => 'destroy' })
+  get('/delete_school/:id', { :controller => 'schools', :action => 'destroy' })
   #------------------------------
 
   # Routes for the Dorm resource:
@@ -39,43 +44,55 @@ Rails.application.routes.draw do
   get('/delete_dorm/:id', { :controller => 'dorms', :action => 'destroy' })
   #------------------------------
 
-  # Landing Page
-  get('/', { :controller => 'statics', :action => 'landing' })
-  #------------------------------
-
-
-  # Routes for the M_factor resource:
+  # Routes for the Response resource:
   # CREATE
-  get('/m_factors/new', { :controller => 'm_factors', :action => 'new' })
-  get('/create_m_factor', { :controller => 'm_factors', :action => 'create' })
+  get('/responses/new', { :controller => 'responses', :action => 'new' })
+  get('/create_response', { :controller => 'responses', :action => 'create' })
 
   # READ
-  get('/m_factors', { :controller => 'm_factors', :action => 'index' })
-  get('/m_factors/:id', { :controller => 'm_factors', :action => 'show' })
+  get('/responses', { :controller => 'responses', :action => 'index' })
+  get('/responses/:id', { :controller => 'responses', :action => 'show' })
 
   # UPDATE
-  get('/m_factors/:id/edit', { :controller => 'm_factors', :action => 'edit' })
-  get('/update_m_factor/:id', { :controller => 'm_factors', :action => 'update' })
+  get('/responses/:id/edit', { :controller => 'responses', :action => 'edit' })
+  get('/update_response/:id', { :controller => 'responses', :action => 'update' })
 
   # DELETE
-  get('/delete_m_factor/:id', { :controller => 'm_factors', :action => 'destroy' })
+  get('/delete_response/:id', { :controller => 'responses', :action => 'destroy' })
   #------------------------------
 
-  # Routes for the F_factor resource:
+  # Routes for the Question resource:
   # CREATE
-  get('/f_factors/new', { :controller => 'f_factors', :action => 'new' })
-  get('/create_f_factor', { :controller => 'f_factors', :action => 'create' })
+  get('/questions/new', { :controller => 'questions', :action => 'new' })
+  get('/create_question', { :controller => 'questions', :action => 'create' })
 
   # READ
-  get('/f_factors', { :controller => 'f_factors', :action => 'index' })
-  get('/f_factors/:id', { :controller => 'f_factors', :action => 'show' })
+  get('/questions', { :controller => 'questions', :action => 'index' })
+  get('/questions/:id', { :controller => 'questions', :action => 'show' })
 
   # UPDATE
-  get('/f_factors/:id/edit', { :controller => 'f_factors', :action => 'edit' })
-  get('/update_f_factor/:id', { :controller => 'f_factors', :action => 'update' })
+  get('/questions/:id/edit', { :controller => 'questions', :action => 'edit' })
+  get('/update_question/:id', { :controller => 'questions', :action => 'update' })
 
   # DELETE
-  get('/delete_f_factor/:id', { :controller => 'f_factors', :action => 'destroy' })
+  get('/delete_question/:id', { :controller => 'questions', :action => 'destroy' })
+  #------------------------------
+
+  # Routes for the Student resource:
+  # CREATE
+  get('/students/new', { :controller => 'students', :action => 'new' })
+  get('/create_student', { :controller => 'students', :action => 'create' })
+
+  # READ
+  get('/students', { :controller => 'students', :action => 'index' })
+  get('/students/:id', { :controller => 'students', :action => 'show' })
+
+  # UPDATE
+  get('/students/:id/edit', { :controller => 'students', :action => 'edit' })
+  get('/update_student/:id', { :controller => 'students', :action => 'update' })
+
+  # DELETE
+  get('/delete_student/:id', { :controller => 'students', :action => 'destroy' })
   #------------------------------
 
 

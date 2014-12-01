@@ -1,0 +1,44 @@
+<div class="page-header">
+  <h1>Responses</h1>
+</div>
+
+<p><a href="/responses/new" class="btn btn-primary">Add a New Response</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Question</th>
+      <th>Qanswer integer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @responses.each do |response| %>
+      <tr>
+        <td><%= response.student_id %></td>
+        <td><%= response.question_id %></td>
+        <td><%= response.qanswer_integer %></td>
+        <td>
+          <a href="/responses/<%= response.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/responses/<%= response.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_response/<%= response.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

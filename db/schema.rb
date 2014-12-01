@@ -11,23 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124181252) do
+ActiveRecord::Schema.define(version: 20141201123124) do
 
   create_table "dorms", force: true do |t|
     t.string   "name"
     t.string   "address"
+    t.string   "location"
     t.integer  "size"
     t.integer  "gender_i"
-    t.integer  "crit_1"
-    t.integer  "crit_2"
-    t.integer  "crit_3"
-    t.integer  "crit_4"
-    t.integer  "crit_5"
-    t.integer  "crit_6"
-    t.integer  "crit_7"
-    t.integer  "crit_8"
-    t.integer  "crit_9"
-    t.integer  "crit_10"
+    t.integer  "school_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -58,23 +50,36 @@ ActiveRecord::Schema.define(version: 20141124181252) do
     t.datetime "updated_at"
   end
 
+  create_table "questions", force: true do |t|
+    t.string   "question"
+    t.integer  "school_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "responses", force: true do |t|
+    t.integer  "student_id"
+    t.integer  "question_id"
+    t.string   "qanswer_integer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "schools", force: true do |t|
+    t.string   "name"
+    t.string   "email_end"
+    t.string   "theme"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "students", force: true do |t|
     t.string   "email"
+    t.string   "email_end"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "school"
     t.string   "pref_location"
-    t.integer  "crit_1"
-    t.integer  "crit_2"
-    t.integer  "crit_3"
-    t.integer  "crit_4"
-    t.integer  "crit_5"
-    t.integer  "crit_6"
-    t.integer  "crit_7"
-    t.integer  "crit_8"
-    t.integer  "crit_9"
-    t.integer  "crit_10"
-    t.string   "gender"
     t.integer  "gender_i"
     t.string   "country"
     t.integer  "dorm_id"

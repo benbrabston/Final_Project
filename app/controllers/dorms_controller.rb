@@ -15,18 +15,10 @@ class DormsController < ApplicationController
     @dorm = Dorm.new
     @dorm.name = params[:name]
     @dorm.address = params[:address]
+    @dorm.location = params[:location]
     @dorm.size = params[:size]
     @dorm.gender_i = params[:gender_i]
-    @dorm.crit_1 = params[:crit_1]
-    @dorm.crit_2 = params[:crit_2]
-    @dorm.crit_3 = params[:crit_3]
-    @dorm.crit_4 = params[:crit_4]
-    @dorm.crit_5 = params[:crit_5]
-    @dorm.crit_6 = params[:crit_6]
-    @dorm.crit_7 = params[:crit_7]
-    @dorm.crit_8 = params[:crit_8]
-    @dorm.crit_9 = params[:crit_9]
-    @dorm.crit_10 = params[:crit_10]
+    @dorm.school_id = params[:school_id]
 
     if @dorm.save
       redirect_to "/dorms", :notice => "Dorm created successfully."
@@ -44,18 +36,10 @@ class DormsController < ApplicationController
 
     @dorm.name = params[:name]
     @dorm.address = params[:address]
+    @dorm.location = params[:location]
     @dorm.size = params[:size]
     @dorm.gender_i = params[:gender_i]
-    @dorm.crit_1 = params[:crit_1]
-    @dorm.crit_2 = params[:crit_2]
-    @dorm.crit_3 = params[:crit_3]
-    @dorm.crit_4 = params[:crit_4]
-    @dorm.crit_5 = params[:crit_5]
-    @dorm.crit_6 = params[:crit_6]
-    @dorm.crit_7 = params[:crit_7]
-    @dorm.crit_8 = params[:crit_8]
-    @dorm.crit_9 = params[:crit_9]
-    @dorm.crit_10 = params[:crit_10]
+    @dorm.school_id = params[:school_id]
 
     if @dorm.save
       redirect_to "/dorms", :notice => "Dorm updated successfully."

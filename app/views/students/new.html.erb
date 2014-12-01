@@ -24,6 +24,16 @@
         </div>
       </div>
 
+      <!-- Label and input for email_end -->
+      <div class="form-group">
+        <label for="email_end" class="col-sm-2 control-label">
+          Email end
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="email_end" name="email_end" placeholder="Email end" class="form-control" value="<%= @student.email_end %>">
+        </div>
+      </div>
+
       <!-- Label and input for first_name -->
       <div class="form-group">
         <label for="first_name" class="col-sm-2 control-label">
@@ -64,116 +74,6 @@
         </div>
       </div>
 
-      <!-- Label and input for crit_1 -->
-      <div class="form-group">
-        <label for="crit_1" class="col-sm-2 control-label">
-          Crit 1
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="crit_1" name="crit_1" placeholder="Crit 1" class="form-control" value="<%= @student.crit_1 %>">
-        </div>
-      </div>
-
-      <!-- Label and input for crit_2 -->
-      <div class="form-group">
-        <label for="crit_2" class="col-sm-2 control-label">
-          Crit 2
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="crit_2" name="crit_2" placeholder="Crit 2" class="form-control" value="<%= @student.crit_2 %>">
-        </div>
-      </div>
-
-      <!-- Label and input for crit_3 -->
-      <div class="form-group">
-        <label for="crit_3" class="col-sm-2 control-label">
-          Crit 3
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="crit_3" name="crit_3" placeholder="Crit 3" class="form-control" value="<%= @student.crit_3 %>">
-        </div>
-      </div>
-
-      <!-- Label and input for crit_4 -->
-      <div class="form-group">
-        <label for="crit_4" class="col-sm-2 control-label">
-          Crit 4
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="crit_4" name="crit_4" placeholder="Crit 4" class="form-control" value="<%= @student.crit_4 %>">
-        </div>
-      </div>
-
-      <!-- Label and input for crit_5 -->
-      <div class="form-group">
-        <label for="crit_5" class="col-sm-2 control-label">
-          Crit 5
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="crit_5" name="crit_5" placeholder="Crit 5" class="form-control" value="<%= @student.crit_5 %>">
-        </div>
-      </div>
-
-      <!-- Label and input for crit_6 -->
-      <div class="form-group">
-        <label for="crit_6" class="col-sm-2 control-label">
-          Crit 6
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="crit_6" name="crit_6" placeholder="Crit 6" class="form-control" value="<%= @student.crit_6 %>">
-        </div>
-      </div>
-
-      <!-- Label and input for crit_7 -->
-      <div class="form-group">
-        <label for="crit_7" class="col-sm-2 control-label">
-          Crit 7
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="crit_7" name="crit_7" placeholder="Crit 7" class="form-control" value="<%= @student.crit_7 %>">
-        </div>
-      </div>
-
-      <!-- Label and input for crit_8 -->
-      <div class="form-group">
-        <label for="crit_8" class="col-sm-2 control-label">
-          Crit 8
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="crit_8" name="crit_8" placeholder="Crit 8" class="form-control" value="<%= @student.crit_8 %>">
-        </div>
-      </div>
-
-      <!-- Label and input for crit_9 -->
-      <div class="form-group">
-        <label for="crit_9" class="col-sm-2 control-label">
-          Crit 9
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="crit_9" name="crit_9" placeholder="Crit 9" class="form-control" value="<%= @student.crit_9 %>">
-        </div>
-      </div>
-
-      <!-- Label and input for crit_10 -->
-      <div class="form-group">
-        <label for="crit_10" class="col-sm-2 control-label">
-          Crit 10
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="crit_10" name="crit_10" placeholder="Crit 10" class="form-control" value="<%= @student.crit_10 %>">
-        </div>
-      </div>
-
-      <!-- Label and input for gender -->
-      <div class="form-group">
-        <label for="gender" class="col-sm-2 control-label">
-          Gender
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="gender" name="gender" placeholder="Gender" class="form-control" value="<%= @student.gender %>">
-        </div>
-      </div>
-
       <!-- Label and input for gender_i -->
       <div class="form-group">
         <label for="gender_i" class="col-sm-2 control-label">
@@ -210,5 +110,114 @@
         </div>
       </div>
     </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Add Student</h3>
+      </div>
+      <div class="panel-body">
+        <form action="/create_student" class="form-horizontal">
+          <!-- Label and input for email -->
+          <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">
+              Email
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="email" name="email" placeholder="Email" class="form-control" value="<%= @student.email %>">
+            </div>
+          </div>
+
+          <!-- Label and input for email_end -->
+          <div class="form-group">
+            <label for="email_end" class="col-sm-2 control-label">
+              Email end
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="email_end" name="email_end" placeholder="Email end" class="form-control" value="<%= @student.email_end %>">
+            </div>
+          </div>
+
+          <!-- Label and input for first_name -->
+          <div class="form-group">
+            <label for="first_name" class="col-sm-2 control-label">
+              First name
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="first_name" name="first_name" placeholder="First name" class="form-control" value="<%= @student.first_name %>">
+            </div>
+          </div>
+
+          <!-- Label and input for last_name -->
+          <div class="form-group">
+            <label for="last_name" class="col-sm-2 control-label">
+              Last name
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="last_name" name="last_name" placeholder="Last name" class="form-control" value="<%= @student.last_name %>">
+            </div>
+          </div>
+
+          <!-- Label and input for school -->
+          <div class="form-group">
+            <label for="school" class="col-sm-2 control-label">
+              School
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="school" name="school" placeholder="School" class="form-control" value="<%= @student.school %>">
+            </div>
+          </div>
+
+          <!-- Label and input for pref_location -->
+          <div class="form-group">
+            <label for="pref_location" class="col-sm-2 control-label">
+              Pref location
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="pref_location" name="pref_location" placeholder="Pref location" class="form-control" value="<%= @student.pref_location %>">
+            </div>
+          </div>
+
+          <!-- Label and input for gender_i -->
+          <div class="form-group">
+            <label for="gender_i" class="col-sm-2 control-label">
+              Gender i
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="gender_i" name="gender_i" placeholder="Gender i" class="form-control" value="<%= @student.gender_i %>">
+            </div>
+          </div>
+
+          <!-- Label and input for country -->
+          <div class="form-group">
+            <label for="country" class="col-sm-2 control-label">
+              Country
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="country" name="country" placeholder="Country" class="form-control" value="<%= @student.country %>">
+            </div>
+          </div>
+
+          <!-- Label and input for dorm_id -->
+          <div class="form-group">
+            <label for="dorm_id" class="col-sm-2 control-label">
+              Dorm
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="dorm_id" name="dorm_id" placeholder="Dorm" class="form-control" value="<%= @student.dorm_id %>">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" value="Create Student" class="btn btn-primary">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
