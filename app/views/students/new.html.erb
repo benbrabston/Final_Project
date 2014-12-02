@@ -48,11 +48,11 @@
       </div>
 
       <!-- Label and input for gender -->
-      <label for="pref_location" class="col-sm-2 control-label">
+      <label for="gender" class="col-sm-2 control-label">
         Gender
       </label>
       <div class="form-group col-sm-10">
-        <%= select_tag(:gender, options_from_collection_for_select(Student.all, :id, :gender, @student.gender), :class => "form-control") %>
+        <%= select_tag(:gender, options_for_select(["Male", "Female"], @student.gender), :class => "form-control") %>
       </div>
 
       <!-- Label and input for country -->

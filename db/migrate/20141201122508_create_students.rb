@@ -4,7 +4,7 @@ class CreateStudents < ActiveRecord::Migration
       t.string :email_end
       t.string :first_name
       t.string :last_name
-      t.string :school
+      t.integer :school_id
       t.string :pref_location
       t.string :gender
       t.string :country

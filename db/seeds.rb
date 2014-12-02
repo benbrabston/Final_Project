@@ -24,6 +24,7 @@ student_emails.each do |email_new|
   student.save
 end
 
+puts "There are now #{Student.count} students in the database."
 
 student_info = [
   {
@@ -71,10 +72,10 @@ student_info = [
 ]
 
 student_info.each do |student_hash|
-  p = Student.find_by( :email => student_hash[:email] )
+  p = Student.find_by({ :email => student_hash[:email] })
   p.first_name = student_hash[:first_name]
   p.last_name = student_hash[:last_name]
   p.gender = student_hash[:gender]
 
   p.save
-end
+ end
