@@ -24,32 +24,6 @@ ActiveRecord::Schema.define(version: 20141201185150) do
     t.datetime "updated_at"
   end
 
-  create_table "f_factors", force: true do |t|
-    t.integer  "student_id"
-    t.string   "gender"
-    t.float    "factor_1"
-    t.float    "factor_2"
-    t.float    "factor_3"
-    t.float    "factor_4"
-    t.float    "factor_5"
-    t.float    "factor_6"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "m_factors", force: true do |t|
-    t.integer  "student_id"
-    t.string   "gender"
-    t.float    "factor_1"
-    t.float    "factor_2"
-    t.float    "factor_3"
-    t.float    "factor_4"
-    t.float    "factor_5"
-    t.float    "factor_6"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "questions", force: true do |t|
     t.string   "question"
     t.integer  "school_id"
@@ -60,7 +34,7 @@ ActiveRecord::Schema.define(version: 20141201185150) do
   create_table "responses", force: true do |t|
     t.integer  "student_id"
     t.integer  "question_id"
-    t.string   "qanswer_integer"
+    t.integer  "qanswer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -77,7 +51,7 @@ ActiveRecord::Schema.define(version: 20141201185150) do
     t.string   "email_end"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "school"
+    t.integer  "school_id"
     t.string   "pref_location"
     t.string   "gender"
     t.string   "country"
