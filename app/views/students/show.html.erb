@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Student #<%= @student.id %></h1>
+  <h1><%= @student.first_name %> <%= @student.last_name %></h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -16,7 +16,7 @@
   <dd><%= @student.last_name %></dd>
 
   <dt>School</dt>
-  <dd><%= @student.school %></dd>
+  <dd><%= @student.school.name %></dd>
 
   <dt>Pref location</dt>
   <dd><%= @student.pref_location %></dd>
@@ -28,6 +28,17 @@
   <dd><%= @student.country %></dd>
 
   <dt>Dorm</dt>
-  <dd><%= @student.dorm_id %></dd>
+  <% if @student.dorm_id.present? %>
+    <dd><%= @student.dorm_id %></dd>
+  <% else %>
+    <dd>TBD</dd>
+  <% end %>
 
+</dl>
+
+<dl class = "d1-horizontal">
+  <% @response.each do |response| %>
+    <dt><%= Question.find_by(school_id: @student.school_id, id: response.question_id).question_text %></dt>
+    <dd><%= response.qanswer %></dd>
+  <% end %>
 </dl>

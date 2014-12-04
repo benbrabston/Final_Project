@@ -6,7 +6,11 @@
 
 Rails.application.routes.draw do
   devise_for :students
+
   root('statics#landing')
+
+  get('factor' , { :controller => 'statics', :action => 'factor' })
+
 
   #------------------------------
 

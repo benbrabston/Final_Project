@@ -4,5 +4,5 @@ class Dorm < ActiveRecord::Base
   belongs_to :school
 
   validates :name, :presence => true
-  validates_associated :schools
+  validates_uniqueness_of :name, :scope => [:school_id]
 end

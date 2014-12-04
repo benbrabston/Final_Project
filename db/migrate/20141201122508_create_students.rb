@@ -9,6 +9,8 @@ class CreateStudents < ActiveRecord::Migration
       t.string :gender
       t.string :country
       t.integer :dorm_id
+      t.boolean :admin, :default => 0
+      t.boolean :school_admin, :default => 0
 
       t.timestamps
 

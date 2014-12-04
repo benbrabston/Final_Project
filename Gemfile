@@ -2,8 +2,12 @@ source 'https://rubygems.org'
 
 gem 'devise'
 
+# For factoring
+gem 'statsample', '~> 1.4.0'
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
+# RCAV CRUD
 gem 'starter_generators', :git => "git://github.com/rbetina/starter_generators", :branch => "panels"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
