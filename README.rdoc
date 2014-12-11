@@ -10,7 +10,7 @@ Some cool/interesting points:
 
 * The questions and number of questions can fluctuate by school: removing a question will destroy all the responses of each of the responding students, and each school can ask different questions.
 
-* Most admins can only work with their own school (i.e. think of an everyday university administrator).  There is a third role that can look across schools
+* Most admins can only work with their own school (i.e. think of an everyday university administrator).  There is a third role that can look across schools.  Only these special universal admins can remove other admins
 
 * Students can sign up, but admins can also add students manually (though the student will have to sign in to respond to each of the attitude statements)
 
@@ -20,4 +20,4 @@ Some cool/interesting points:
 
 * Different schools have different CSS themes
 
-* A basic CSV file can be downloaded on the run factors tab
+* A (very) basic CSV file can be downloaded on the run factors tab
