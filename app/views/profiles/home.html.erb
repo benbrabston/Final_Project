@@ -41,15 +41,6 @@
         <dd><%= response.qanswer %></dd>
         <% end %>
 
-        <!-- without responses -->
-        <% Question.where({ :school_id => current_student.id }).each do |question| %>
-        <% if Response.find_by({ :question_id => question.school_question_id}).present? %>
-        <% else %>
-        <dt><%= question.question_text %></dt>
-        <dd>NO ANSWER</dd>
-        <% end %>
-        <% end %>
-
       </dl>
     </div>
 

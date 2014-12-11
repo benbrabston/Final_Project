@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
   end
 
   def update_responses
-    @current_responses = Response.where({ :student_id => current_student.id })
+    @current_responses = current_student.responses
 
     # Edit Current Responses
     @current_responses.each do |response|
