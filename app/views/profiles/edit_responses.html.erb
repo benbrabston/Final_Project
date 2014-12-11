@@ -22,7 +22,7 @@
 
     <!-- unanswered responses -->
        <% Question.where({ :school_id => current_student.id }).each do |question| %>
-        <% if Response.find_by({ :question_id => question.school_question_id}).present? %>
+        <% if Response.find_by({ :question_id => question.school_question_id, :student_id => current_student.id}).present? %>
         <% else %>
         <div class="form-group">
           <label for= "<%= question.school_question_id %>" class="col-sm-2 control-label">

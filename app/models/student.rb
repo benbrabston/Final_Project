@@ -16,6 +16,8 @@ class Student < ActiveRecord::Base
 
   before_validation :connect_to_school
 
+  before_save :create_responses
+
   def connect_to_school
     school_end = self.email.split("@").last
 
@@ -25,7 +27,15 @@ class Student < ActiveRecord::Base
       self.school_id = the_school.id
       self.email_end = school_end
     end
+
   end
 
-
+  def create_responses
+    Question.where({ :school_id => self.school_id}).each do |question|
+      response = Response.new
+      response.student_id = self.id
+      response.question_id = question.school_question_id
+      response.save
+    end
+  end
 end

@@ -8,7 +8,7 @@ This is a student housing website dedicated to placing students in dorms.  There
 
 Some cool/interesting points:
 
-* The questions and number of questions can fluctuate by school: removing a question will destroy all the responses of each of the responding students, and each school can ask different questions.
+* The questions and number of questions can fluctuate by school: removing a question will destroy all the responses of each of the responding students, and each school can ask different questions.  Destroying students will also destroy their corresponding responses
 
 * Most admins can only work with their own school (i.e. think of an everyday university administrator).  There is a third role that can look across schools.  Only these special universal admins can remove other admins
 
@@ -16,7 +16,7 @@ Some cool/interesting points:
 
 * When placing students in dorms, there is an alert if a dorm is over capacity
 
-* Restrictions requiring students have a proper email end tag to sign up (currently @example.com, @chicagbooth.edu, and @u.northwestern.edu)
+* Restrictions requiring students have a proper email end tag to sign up (currently @example.com, @chicagbooth.edu, and @u.northwestern.edu).  When signing up, students are automatically assigned their proper school; responses are automatically populated with blank answers until the students respond
 
 * Different schools have different CSS themes
 

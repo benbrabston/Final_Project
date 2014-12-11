@@ -72,6 +72,11 @@ class StudentsController < ApplicationController
   def destroy
     @student = Student.find(params[:id])
 
+    Response.where({ :student_id => @student.id}).each do |response|
+      response.destroy
+    end
+
+
     @student.destroy
 
     redirect_to "/students", :notice => "Student deleted."
