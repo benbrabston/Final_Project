@@ -38,11 +38,13 @@ puts "There are now #{School.count} schools in the database."
 dorms = [
   {
     :name => "Party Dorm",
-    :school_id => 1
+    :school_id => 1,
+    :size => 10
   },
   {
     :name => "Study Dorm",
-    :school_id => 1
+    :school_id => 1,
+    :size => 20
   }
 ]
 
@@ -51,6 +53,7 @@ dorms.each do |dorm_new|
   dorm = Dorm.new
   dorm.name = dorm_new[:name]
   dorm.school_id = dorm_new[:school_id]
+  dorm.size = dorm_new[:size]
   dorm.save
 end
 

@@ -1,3 +1,10 @@
+<% if (current_student.school_admin == true || current_student.admin == true) && @k > 0 %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  Note: one of the dorms has too many students
+</div>
+<% end %>
+
 <div class="page-header">
 
   <% if current_student.admin == true %>
@@ -5,7 +12,6 @@
   <% elsif current_student.school_admin == true  %>
   <h1>Students at <%= current_student.school.name %></h1>
   <% end %>
-
 
 </div>
 
@@ -40,7 +46,7 @@
         <td><%= student.school.name %></td>
         <td><%= student.gender %></td>
         <% if student.dorm_id.present? %>
-          <td><%= student.dorm_id %></td>
+          <td><%= student.dorm.name %></td>
         <% else %>
           <td>TBD</td>
         <% end %>

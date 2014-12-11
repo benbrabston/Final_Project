@@ -1,0 +1,46 @@
+<% if @question.errors.any? %>
+  <% @question.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h1>Edit Question #<%= @question.id %></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_question/<%= @question.id %>" class="form-horizontal">
+      <!-- Label and input for question -->
+      <div class="form-group">
+        <label for="question_text" class="col-sm-2 control-label">
+          Question
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="question_text" name="question_text" placeholder="Question" class="form-control" value="<%= @question.question_text %>">
+        </div>
+      </div>
+
+      <!-- Label and input for school_id if universal admin-->
+      <% if current_student.admin == true %>
+      <div class="form-group">
+        <label for="school" class="col-sm-2 control-label">
+          School
+        </label>
+        <div class="col-sm-10">
+          <%= select_tag(:school_id, options_from_collection_for_select(School.all, :id, :name), :class => "form-control") %>
+        </div>
+      </div>
+      <% end %>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input type="submit" value="Update Question" class="btn btn-primary">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

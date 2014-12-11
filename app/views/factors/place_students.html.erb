@@ -1,5 +1,4 @@
 <% if current_student.admin == true || current_student.school_admin == true  %>
-
 <div class="row">
   <div class="col-md-12">
     <form action="/make_placements" class="form-horizontal">
@@ -7,14 +6,16 @@
 
     <% @students.each do |student| %>
 
+      <% if student.admin != true && student.school_admin != true %>
       <div class = "form_group">
         <label for="school" class="col-sm-2 control-label">
           <%= student.first_name %> <%= student.last_name %>
         </label>
         <div class="col-sm-10">
-          <%= select_tag(:dorm_id, options_from_collection_for_select(Dorm.where({ :school_id => @school_id }), :id, :name), :class => "form-control") %>
+          <%= select_tag(student.id, options_from_collection_for_select(Dorm.where({ :school_id => @school_id }), :id, :name), :class => "form-control") %>
         </div>
       </div>
+      <% end  %>
     <% end %>
 
     <label></label>

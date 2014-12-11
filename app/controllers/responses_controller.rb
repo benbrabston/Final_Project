@@ -36,7 +36,7 @@ class ResponsesController < ApplicationController
     @response.qanswer = params[:qanswer]
 
     if @response.save
-      redirect_to "/responses", :notice => "Response updated successfully."
+      redirect_to "/edit_responses", :notice => "Response updated successfully."
     else
       render 'edit'
     end

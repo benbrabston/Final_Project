@@ -69,19 +69,19 @@ Rails.application.routes.draw do
 
   # Routes for the Response resource:
   # CREATE
-  get('/responses/new', { :controller => 'responses', :action => 'new' })
-  get('/create_response', { :controller => 'responses', :action => 'create' })
+  # get('/responses/new', { :controller => 'responses', :action => 'new' })
+  # get('/create_response', { :controller => 'responses', :action => 'create' })
 
-  # READ
-  get('/responses', { :controller => 'responses', :action => 'index' })
-  get('/responses/:id', { :controller => 'responses', :action => 'show' })
+  # # READ
+  # get('/responses', { :controller => 'responses', :action => 'index' })
+  # get('/responses/:id', { :controller => 'responses', :action => 'show' })
 
-  # UPDATE
-  get('/responses/:id/edit', { :controller => 'responses', :action => 'edit' })
-  get('/update_response/:id', { :controller => 'responses', :action => 'update' })
+  # # UPDATE
+  # get('/responses/:id/edit', { :controller => 'responses', :action => 'edit' })
+  # get('/update_response/:id', { :controller => 'responses', :action => 'update' })
 
-  # DELETE
-  get('/delete_response/:id', { :controller => 'responses', :action => 'destroy' })
+  # # DELETE
+  # get('/delete_response/:id', { :controller => 'responses', :action => 'destroy' })
   #------------------------------
 
   # Routes for the Question resource:

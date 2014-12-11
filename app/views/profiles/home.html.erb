@@ -4,7 +4,6 @@
 
 <div class = "row">
 
-  </div>
   <div class = "col-sm-6">
     <h2 class = "text-center">My Personal Information</h2>
     <dl class = "dl-horizontal">
@@ -21,18 +20,38 @@
       <dt>Gender</dt>
       <dd><%= current_student.gender %></dd>
 
+      <dt>Dorm</dt>
+      <% if current_student.dorm.present? %>
+      <dd><%= current_student.dorm.name %></dd>
+      <% else %>
+      <dd>In Process</dd>
+      <% end %>
+
     </dl>
   </div>
+
 
   <div class = "col-sm-6">
     <h2 class = "text-center">My Responses</h2>
       <dl class = "dl-horizontal">
+
+        <!-- with responses -->
         <% @current_responses.each do |response| %>
-          <dt><%= Question.find_by({:school_id => current_student.school_id, :school_question_id => response.question_id}).question_text %></dt>
-          <dd><%= response.qanswer %></dd>
+        <dt><%= Question.find_by({:school_id => current_student.school_id, :school_question_id => response.question_id}).question_text %></dt>
+        <dd><%= response.qanswer %></dd>
         <% end %>
+
+        <!-- without responses -->
+        <% Question.where({ :school_id => current_student.id }).each do |question| %>
+        <% if Response.find_by({ :question_id => question.school_question_id}).present? %>
+        <% else %>
+        <dt><%= question.question_text %></dt>
+        <dd>NO ANSWER</dd>
+        <% end %>
+        <% end %>
+
       </dl>
-  </div>
+    </div>
 
 </div>
 

@@ -24,9 +24,15 @@ class FactorsController < ApplicationController
 
 
   def make_placements
+    Student.all.each do |student|
+      if params[student.id.to_s].present?
+        s = Student.find(student.id)
+        s.dorm_id = params[student.id.to_s]
+        s.save
+      end
+    end
 
-
-
+    redirect_to "/", :notice => "Students assigned succesfully"
 
 
   end

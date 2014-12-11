@@ -2,6 +2,14 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+
+    @k = 0
+    Dorm.where({ :school_id => current_student.school_id }).each do |dorm|
+      if dorm.students.count > dorm.size
+        @k = @k + 1
+      end
+    end
+
   end
 
   def show
