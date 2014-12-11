@@ -1,6 +1,26 @@
 class FactorsController < ApplicationController
 
   def setup
+    csv_data_array = []
+    Response.all.each do |student|
+      csv_data_array = csv_data_array + [student.student_id]
+    end
+    Response.all.each do |qanswer|
+      csv_data_array = csv_data_array + [qanswer.qanswer]
+    end
+    Response.all.each do |question|
+      csv_data_array = csv_data_array + [question.question_id]
+    end
+
+
+
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data csv_data_array.to_csv }
+      format.xls { send_data @responses.to_csv(col_sep: "\t") }
+    end
+
   end
 
   def place_students

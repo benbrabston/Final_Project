@@ -1,6 +1,13 @@
-require 'statsample'
-
 class Factor < ActiveRecord::Base
+
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << self.keys
+      all.each do |response|
+        csv << response.attributes.values_at(*column_names)
+      end
+    end
+  end
 
   # TODO SIMPLIFY THE DATABASE CREATION PROCESS
 

@@ -1,3 +1,7 @@
+<% if current_student.admin == true || current_student.school_admin == true %>
+
+<a href = "/factor/setup.csv">Download Student Data CSV</a>
+
 <div class="page-header">
   <h1>Factoring</h1>
 </div>
@@ -24,3 +28,5 @@
     </form>
   </div>
 </div>
+
+<% end %>
