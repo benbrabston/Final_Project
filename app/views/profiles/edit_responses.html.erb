@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>Edit My Responses</h1>
+</div>
+
+<% # TODO update error messages %>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/profile/update_responses/" class="form-horizontal">
+
+
+      <% @current_responses.each do |response| %>
+       <div class="form-group">
+          <label for= "<%= response.question_id %>" class="col-sm-2 control-label">
+            <%= Question.find_by({ :school_question_id => response.question_id, :school_id => current_student.school_id}).question_text %>
+          </label>
+          <div class="col-sm-10">
+            <input type="text" id="<%= response.question_id %>" name="<%= response.question_id %>" placeholder="<%= response.qanswer %>" class="form-control" value="<%= response.qanswer %>">
+          </div>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input type="submit" value="Update My Responses" class="btn btn-primary">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

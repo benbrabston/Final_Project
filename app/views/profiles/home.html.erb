@@ -1,0 +1,48 @@
+<div class="page-header">
+  <h1><%= current_student.first_name %> <%= current_student.last_name %></h1>
+</div>
+
+<div class = "row">
+
+  </div>
+  <div class = "col-sm-6">
+    <h2 class = "text-center">My Personal Information</h2>
+    <dl class = "dl-horizontal">
+
+      <dt>First Name</dt>
+      <dd><%= current_student.first_name %></dd>
+
+      <dt>Last Name</dt>
+      <dd><%= current_student.last_name %></dd>
+
+      <dt>Email</dt>
+      <dd><%= current_student.email %></dd>
+
+      <dt>Gender</dt>
+      <dd><%= current_student.gender %></dd>
+
+    </dl>
+  </div>
+
+  <div class = "col-sm-6">
+    <h2 class = "text-center">My Responses</h2>
+      <dl class = "dl-horizontal">
+        <% @current_responses.each do |response| %>
+          <dt><%= Question.find_by({:school_id => current_student.school_id, :school_question_id => response.question_id}).question_text %></dt>
+          <dd><%= response.qanswer %></dd>
+        <% end %>
+      </dl>
+  </div>
+
+</div>
+
+
+<div class = "row">
+  <div class = "col-sm-6">
+    <p class = "text-center"><a href="/students/edit" class="btn btn-primary">Edit My Info</a></p>
+  </div>
+
+  <div class = "col-sm-6">
+    <p class = "text-center"><a href="/profile/edit_responses" class="btn btn-primary">Edit My Responses</a></p>
+  </div>
+</div>

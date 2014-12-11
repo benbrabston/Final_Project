@@ -1,9 +1,15 @@
 <div class="page-header">
-  <h1>Students</h1>
+
+  <% if current_student.admin == true %>
+  <h1>Students across Schools</h1>
+  <% elsif current_student.school_admin == true  %>
+  <h1>Students at <%= current_student.school.name %></h1>
+  <% end %>
+
+
 </div>
 
-
-<!--<p><a href="/students/new" class="btn btn-primary">Add a New Student</a></p>-->
+<p><a href="/students/new" class="btn btn-primary">Add a New Student</a></p>
 
 <table class="table table-hover">
   <thead>
@@ -13,9 +19,7 @@
       <th>First name</th>
       <th>Last name</th>
       <th>School</th>
-      <th>Pref location</th>
       <th>Gender</th>
-      <th>Country</th>
       <th>Dorm</th>
       <th></th>
       <th></th>
@@ -25,15 +29,16 @@
 
   <tbody>
     <% @students.each do |student| %>
+      <% if student.school_id != current_student.school_id && current_student.school_admin == true %>
+      <% elsif current_student.admin != true && current_student.school_admin != true %>
+      <% else %>
       <tr>
         <td><%= student.email %></td>
         <td><%= student.email_end %></td>
         <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
         <td><%= student.school.name %></td>
-        <td><%= student.pref_location %></td>
         <td><%= student.gender %></td>
-        <td><%= student.country %></td>
         <% if student.dorm_id.present? %>
           <td><%= student.dorm_id %></td>
         <% else %>
@@ -50,11 +55,14 @@
           </a>
         </td>
         <td>
+          <% if (student.admin != true && student.school_admin != true) || (current_student.admin == true) %>
           <a href="/delete_student/<%= student.id %>" class="btn btn-danger">
             <i class="fa fa-trash-o"></i>
+          <% end %>
           </a>
         </td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

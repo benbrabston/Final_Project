@@ -34,16 +34,6 @@
         </div>
       </div>
 
-      <!-- Label and input for location -->
-      <div class="form-group">
-        <label for="location" class="col-sm-2 control-label">
-          Location
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="location" name="location" placeholder="Location" class="form-control" value="<%= @dorm.location %>">
-        </div>
-      </div>
-
       <!-- Label and input for size -->
       <div class="form-group">
         <label for="size" class="col-sm-2 control-label">
@@ -54,25 +44,17 @@
         </div>
       </div>
 
-      <!-- Label and input for gender -->
+      <!-- Label and input for school_id for universal admins -->
+      <% if current_student.admin == true %>
       <div class="form-group">
-        <label for="gender" class="col-sm-2 control-label">
-          Gender
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="gender" name="gender" placeholder="Gender" class="form-control" value="<%= @dorm.gender %>">
-        </div>
-      </div>
-
-      <!-- Label and input for school_id -->
-      <div class="form-group">
-        <label for="school_id" class="col-sm-2 control-label">
+        <label for="school" class="col-sm-2 control-label">
           School
         </label>
         <div class="col-sm-10">
-          <input type="text" id="school_id" name="school_id" placeholder="School" class="form-control" value="<%= @dorm.school_id %>">
+          <%= select_tag(:school_id, options_from_collection_for_select(School.all, :id, :name), :class => "form-control") %>
         </div>
       </div>
+      <% end %>
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">

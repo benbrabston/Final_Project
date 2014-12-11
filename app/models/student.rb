@@ -9,10 +9,10 @@ class Student < ActiveRecord::Base
   belongs_to :dorm
   belongs_to :school
 
-  validates :email, :presence => true, :uniqueness => true
+  validates :email, :presence => true, :uniqueness => true, :case_sensitive => false
   validates :first_name, :presence => true
   validates :last_name, :presence => true
-#  validates_associated :schools
+  validates :school_id, :presence => true
 
   before_validation :connect_to_school
 
@@ -21,11 +21,7 @@ class Student < ActiveRecord::Base
 
     the_school = School.find_by({ :email_end => school_end })
 
-    if the_school == nil
-
-      #FILL IN FOR EMAILS THAT DO NOT WORK
-
-    else
+    if the_school.present?
       self.school_id = the_school.id
       self.email_end = school_end
     end

@@ -1,4 +1,5 @@
 class DormsController < ApplicationController
+
   def index
     @dorms = Dorm.all
   end
@@ -15,10 +16,12 @@ class DormsController < ApplicationController
     @dorm = Dorm.new
     @dorm.name = params[:name]
     @dorm.address = params[:address]
-    @dorm.location = params[:location]
     @dorm.size = params[:size]
-    @dorm.gender = params[:gender]
-    @dorm.school_id = params[:school_id]
+    if current_student.admin == true
+      @dorm.school_id = params[:school_id]
+    elsif current_student.school_admin == true
+      @dorm.school_id = current_student.school_id
+    end
 
     if @dorm.save
       redirect_to "/dorms", :notice => "Dorm created successfully."
@@ -36,10 +39,14 @@ class DormsController < ApplicationController
 
     @dorm.name = params[:name]
     @dorm.address = params[:address]
-    @dorm.location = params[:location]
     @dorm.size = params[:size]
-    @dorm.gender = params[:gender]
     @dorm.school_id = params[:school_id]
+
+    if current_student.admin == true
+      @dorm.school_id = params[:school_id]
+    elsif current_student.school_admin == true
+      @dorm.school_id = current_student.school_id
+    end
 
     if @dorm.save
       redirect_to "/dorms", :notice => "Dorm updated successfully."

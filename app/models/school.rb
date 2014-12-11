@@ -3,6 +3,6 @@ class School < ActiveRecord::Base
   has_many :students
   has_many :questions
 
-  validates :name, :presence => true, :uniqueness => true
-  validates :email_end, :presence => true, :uniqueness => true
+  validates :name, :presence => true, :uniqueness => true, :case_sensitive => false
+  validates :email_end, :presence => true, :uniqueness => true, :case_sensitive => false
 end

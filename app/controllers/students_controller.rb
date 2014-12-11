@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+
   def index
     @students = Student.all
   end
@@ -17,12 +18,18 @@ class StudentsController < ApplicationController
     @student = Student.new
     @student.first_name = params[:first_name]
     @student.last_name = params[:last_name]
-    @student.pref_location = params[:pref_location]
+    @student.email = params[:email]
     @student.gender = params[:gender]
-    @student.country = params[:country]
+    @student.password = "12345678"
+    @student.password_confirmation = "12345678"
+    if current_student.admin == true
+      @student.school_id = params[:school_id]
+    elsif current_student.school_admin == true
+      @student.school_id = current_student.school_id
+    end
 
     if @student.save
-      redirect_to "/students", :notice => "Student created successfully."
+      redirect_to "/students", :notice => "Student created successfully.  Password set to 12345678"
     else
       render 'new'
     end
@@ -38,9 +45,14 @@ class StudentsController < ApplicationController
     @student.email = params[:email]
     @student.first_name = params[:first_name]
     @student.last_name = params[:last_name]
-    @student.pref_location = params[:pref_location]
     @student.gender = params[:gender]
-    @student.country = params[:country]
+
+    if current_student.admin == true
+      @student.school_id = params[:school_id]
+    elsif current_student.school_admin == true
+      @student.school_id = current_student.school_id
+    end
+
 
     if @student.save
       redirect_to "/students", :notice => "Student updated successfully."

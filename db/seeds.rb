@@ -9,15 +9,18 @@
 schools = [
   {
     :name => "Example University",
-    :email_end => "example.com"
+    :email_end => "example.com",
+    :theme => "//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/superhero/bootstrap.min.css"
   },
   {
     :name => "Northwestern University",
-    :email_end => "u.northwestern.edu"
+    :email_end => "u.northwestern.edu",
+    :theme => "//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/darkly/bootstrap.min.css"
   },
   {
     :name => "Chicago Booth",
-    :email_end => "chicagobooth.edu"
+    :email_end => "chicagobooth.edu",
+    :theme => "//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/flatly/bootstrap.min.css"
   }
 ]
 
@@ -26,6 +29,7 @@ schools.each do |school_new|
   school = School.new
   school.name = school_new[:name]
   school.email_end = school_new[:email_end]
+  school.theme = school_new[:theme]
   school.save
 end
 
@@ -90,8 +94,8 @@ student_emails = [
     :gender => "Male"
   },
   {
-    :first_name => "Obi",
-    :last_name => "Wan",
+    :first_name => "Ben",
+    :last_name => "Kenobi",
     :email => "g@chicagobooth.edu",
     :gender => "Male"
   },
@@ -208,6 +212,20 @@ student_emails = [
     :last_name => "Roosevelt",
     :email => "z@example.com",
     :gender => "Male"
+  },
+  {
+    :first_name => "Universal",
+    :last_name => "Admin",
+    :email => "universal.admin@example.com",
+    :gender => "Male",
+    :admin => true
+  },
+  {
+    :first_name => "Example U",
+    :last_name => "Admin",
+    :email => "example.u.admin@example.com",
+    :gender => "Male",
+    :school_admin => true
   }
 ]
 
@@ -220,6 +238,8 @@ student_emails.each do |student_new|
   student.first_name = student_new[:first_name]
   student.last_name = student_new[:last_name]
   student.gender = student_new[:gender]
+  student.admin = student_new[:admin]
+  student.school_admin = student_new[:school_admin]
   student.save
 end
 
@@ -229,122 +249,152 @@ questions = [
 {
   :question_text => "On a scale of 1-10, how much do you like to party?",
   :school_id => 1,
+  :school_question_id => 1
 },
 {
   :question_text => "On a scale of 1-10, how cleanly are you?",
   :school_id => 1,
+  :school_question_id => 2
 },
 {
   :question_text => "On a scale of 1-10, how much do you enjoy sports?",
   :school_id => 1,
+  :school_question_id => 3
 },
 {
   :question_text => "On a scale of 1-10, how much do you enjoy arts?",
   :school_id => 1,
+  :school_question_id => 4
 },
 {
   :question_text => "On a scale of 1-10, how open are you to new experiences?",
   :school_id => 1,
+  :school_question_id => 5
 },
 {
   :question_text => "On a scale of 1-10, how blunt are you?",
   :school_id => 1,
+  :school_question_id => 6
 },
 {
   :question_text => "On a scale of 1-10, how much organization do you require?",
   :school_id => 1,
+  :school_question_id => 7
 },
 {
   :question_text => "On a scale of 1-10, how much do you keep up with today's events?",
   :school_id => 1,
+  :school_question_id => 8
 },
 {
   :question_text => "On a scale of 1-10, how much of a morning person are you?",
   :school_id => 1,
+  :school_question_id => 9
 },
 {
   :question_text => "On a scale of 1-10, how technologically savvy are you?",
   :school_id => 1,
+  :school_question_id => 10
 },
 {
   :question_text => "On a scale of 1-10, how much do you like to party?",
   :school_id => 2,
+  :school_question_id => 1
 },
 {
   :question_text => "On a scale of 1-10, how cleanly are you?",
   :school_id => 2,
+  :school_question_id => 2
 },
 {
   :question_text => "On a scale of 1-10, how much do you enjoy sports?",
   :school_id => 2,
+  :school_question_id => 3
 },
 {
   :question_text => "On a scale of 1-10, how much do you enjoy arts?",
   :school_id => 2,
+  :school_question_id => 4
 },
 {
   :question_text => "On a scale of 1-10, how open are you to new experiences?",
   :school_id => 2,
+  :school_question_id => 5
 },
 {
   :question_text => "On a scale of 1-10, how blunt are you?",
   :school_id => 2,
+  :school_question_id => 6
 },
 {
   :question_text => "On a scale of 1-10, how much organization do you require?",
   :school_id => 2,
+  :school_question_id => 7
 },
 {
   :question_text => "On a scale of 1-10, how much do you keep up with today's events?",
   :school_id => 2,
+  :school_question_id => 8
 },
 {
   :question_text => "On a scale of 1-10, how much of a morning person are you?",
   :school_id => 2,
+  :school_question_id => 9
 },
 {
   :question_text => "On a scale of 1-10, how quickly do you learn?",
   :school_id => 2,
+  :school_question_id => 10
 },
 {
   :question_text => "On a scale of 1-10, how much do you like to party?",
   :school_id => 3,
+  :school_question_id => 1
 },
 {
   :question_text => "On a scale of 1-10, how cleanly are you?",
   :school_id => 3,
+  :school_question_id => 2
 },
 {
   :question_text => "On a scale of 1-10, how much do you enjoy sports?",
   :school_id => 3,
+  :school_question_id => 3
 },
 {
   :question_text => "On a scale of 1-10, how much do you enjoy arts?",
   :school_id => 3,
+  :school_question_id => 4
 },
 {
   :question_text => "On a scale of 1-10, how open are you to new experiences?",
   :school_id => 3,
+  :school_question_id => 5
 },
 {
   :question_text => "On a scale of 1-10, how blunt are you?",
   :school_id => 3,
+  :school_question_id => 6
 },
 {
   :question_text => "On a scale of 1-10, how much organization do you require?",
   :school_id => 3,
+  :school_question_id => 7
 },
 {
   :question_text => "On a scale of 1-10, how much do you keep up with today's events?",
   :school_id => 3,
+  :school_question_id => 8
 },
 {
   :question_text => "On a scale of 1-10, how much of a morning person are you?",
   :school_id => 3,
+  :school_question_id => 9
 },
 {
   :question_text => "On a scale of 1-10, how quickly do you learn?",
   :school_id => 3,
+  :school_question_id => 10
 }
 ]
 
@@ -352,6 +402,7 @@ questions.each do |question_new|
   q = Question.new
   q.question_text = question_new[:question_text]
   q.school_id = question_new[:school_id]
+  q.school_question_id = question_new[:school_question_id]
   q.save
 end
 

@@ -13,8 +13,14 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new
-    @question.question = params[:question]
     @question.school_id = params[:school_id]
+    @question.question_text = params[:question_text]
+
+    if current_student.admin == true
+      @question.school_id = params[:school_id]
+    else
+      @question.school_id = current_student.school_id
+    end
 
     if @question.save
       redirect_to "/questions", :notice => "Question created successfully."
@@ -30,8 +36,12 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
 
-    @question.question = params[:question]
-    @question.school_id = params[:school_id]
+    @question.question_text = params[:question_text]
+    if current_student.admin == true
+      @question.school_id = params[:school_id]
+    else
+      @question.school_id = current_student.school_id
+    end
 
     if @question.save
       redirect_to "/questions", :notice => "Question updated successfully."

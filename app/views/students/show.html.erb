@@ -3,6 +3,7 @@
 </div>
 
 <dl class="dl-horizontal">
+
   <dt>Email</dt>
   <dd><%= @student.email %></dd>
 
@@ -18,14 +19,8 @@
   <dt>School</dt>
   <dd><%= @student.school.name %></dd>
 
-  <dt>Pref location</dt>
-  <dd><%= @student.pref_location %></dd>
-
   <dt>Gender</dt>
   <dd><%= @student.gender %></dd>
-
-  <dt>Country</dt>
-  <dd><%= @student.country %></dd>
 
   <dt>Dorm</dt>
   <% if @student.dorm_id.present? %>

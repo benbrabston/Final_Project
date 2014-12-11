@@ -1,0 +1,10 @@
+<div class = "header">
+  <h1>Results</h1>
+</div>
+
+<p><%= debug(@students_for_clustering) %></p>
+
+
+<% @students_for_clustering.each do |student| %>
+  <p><%= student.email %></p>
+<% end %>

@@ -1,0 +1,24 @@
+
+<% if current_student.dorm.present? %>
+<div class="page-header">
+  <h1><%= current_student.dorm.name %></h1>
+</div>
+
+<h2 class>Dormmates</h2>
+<ul>
+  <% @dormmates.each do |student| %>
+    <p><%= student.first_name %> <%= student.last_name %></p>
+  <% end %>
+</ul>
+
+
+
+
+<% else %>
+<div class="page-header">
+  <h1>Dorms Are Still Being Processed</h1>
+</div>
+
+
+
+<% end  %>

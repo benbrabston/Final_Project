@@ -7,9 +7,28 @@
 Rails.application.routes.draw do
   devise_for :students
 
-  root('statics#landing')
+  root('profiles#home')
 
-  get('factor' , { :controller => 'statics', :action => 'factor' })
+  # Factoring
+  get('factor/setup' , { :controller => 'factors', :action => 'setup' })
+  get('factor/results/' , { :controller => 'factors', :action => 'clustering_algorithm' })
+
+
+  # Placing students in dorm
+  get('place_students' , { :controller => 'factors', :action => 'place_students'})
+  get('place_students/admin' , { :controller => 'factors', :action => 'place_students_admin'})
+  get('make_placements', { :controller => 'factors', :action => 'make_placements' })
+
+
+  # Student profiling
+  get('profile/home/' , { :controller => 'profiles', :action => 'home' })
+  get('profile/dorm' , { :controller => 'profiles', :action => 'dorm' })
+
+  # Student response updating & editing
+  get('profile/edit_responses' , { :controller => 'profiles', :action => 'edit_responses' })
+  get('profile/update_responses' , { :controller => 'profiles', :action => 'update_responses' })
+
+
 
 
   #------------------------------

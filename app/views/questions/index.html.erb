@@ -1,3 +1,4 @@
+<% if current_student.school_admin == true || current_student.admin == true %>
 <div class="page-header">
   <h1>Questions</h1>
 </div>
@@ -17,9 +18,10 @@
 
   <tbody>
     <% @questions.each do |question| %>
+      <% if (current_student.admin != true && question.school_id == current_student.school_id) || current_student.admin == true %>
       <tr>
-        <td><%= question.question %></td>
-        <td><%= question.school_id %></td>
+        <td><%= question.question_text %></td>
+        <td><%= School.find_by({ :id => question.school_id }).name %></td>
         <td>
           <a href="/questions/<%= question.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
@@ -36,7 +38,9 @@
           </a>
         </td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
+<% end %>
 

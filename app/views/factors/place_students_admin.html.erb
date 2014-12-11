@@ -1,11 +1,10 @@
-<div class="page-header">
-  <h1>Factoring</h1>
-</div>
+<% if current_student.admin == true  %>
+
+
 
 <div class="row">
   <div class="col-md-12">
-    <form action="/####" class="form-horizontal">
-
+    <form action="/place_students" class="form-horizontal">
       <div class="form-group">
         <label for="school" class="col-sm-2 control-label">
           School
@@ -17,10 +16,15 @@
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <input type="submit" value="Run Factoring" class="btn btn-primary">
+        <input type="submit" value="Go To School" class="btn btn-primary">
         </div>
-      </div>
 
+
+      </div>
     </form>
   </div>
 </div>
+
+
+
+<% end %>
