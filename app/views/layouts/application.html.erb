@@ -39,7 +39,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand">FinalProject</a>
+      <% if current_student.present? %>
+      <a href="/" class="navbar-brand"><%= current_student.school.name %></a>
+      <% else %>
+      <a href="/" class="navbar-brand">SPS</a>
+      <% end %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
