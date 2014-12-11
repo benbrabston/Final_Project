@@ -1,5 +1,5 @@
 class Response < ActiveRecord::Base
-  has_many :students
+  belongs_to :student
 
   validates :student_id, :presence => true
 

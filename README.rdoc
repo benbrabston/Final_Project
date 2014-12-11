@@ -1,28 +1,23 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a student housing website dedicated to placing students in dorms.  There are two (and a half) roles.
 
-Things you may want to cover:
+* Admins select questions on which to cluster their student body.  They can also look at their overall student body
 
-* Ruby version
+* Students answer each of the questions, and when they are placed in dorms can see their other classmates
 
-* System dependencies
+Some cool/interesting points:
 
-* Configuration
+* The questions and number of questions can fluctuate by school: removing a question will destroy all the responses of each of the responding students, and each school can ask different questions.
 
-* Database creation
+* Most admins can only work with their own school (i.e. think of an everyday university administrator).  There is a third role that can look across schools
 
-* Database initialization
+* Students can sign up, but admins can also add students manually (though the student will have to sign in to respond to each of the attitude statements)
 
-* How to run the test suite
+* When placing students in dorms, there is an alert if a dorm is over capacity
 
-* Services (job queues, cache servers, search engines, etc.)
+* Restrictions requiring students have a proper email end tag to sign up (currently @example.com, @chicagbooth.edu, and @u.northwestern.edu)
 
-* Deployment instructions
+* Different schools have different CSS themes
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* A basic CSV file can be downloaded on the run factors tab

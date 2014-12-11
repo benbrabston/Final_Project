@@ -3,22 +3,24 @@ class FactorsController < ApplicationController
   def setup
     csv_data_array = []
     Response.all.each do |student|
+      if student.student.school == current_student.school && student.student.admin != true  && student.student.school_admin != true
       csv_data_array = csv_data_array + [student.student_id]
+      end
     end
     Response.all.each do |qanswer|
+      if qanswer.student.school == current_student.school && qanswer.student.admin != true  && qanswer.student.school_admin != true
       csv_data_array = csv_data_array + [qanswer.qanswer]
+      end
     end
     Response.all.each do |question|
+      if question.student.school == current_student.school && question.student.admin != true  && question.student.school_admin != true
       csv_data_array = csv_data_array + [question.question_id]
+      end
     end
-
-
-
 
     respond_to do |format|
       format.html
       format.csv { send_data csv_data_array.to_csv }
-      format.xls { send_data @responses.to_csv(col_sep: "\t") }
     end
 
   end
