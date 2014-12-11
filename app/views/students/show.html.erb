@@ -33,7 +33,7 @@
 
 <dl class = "d1-horizontal">
   <% @response.each do |response| %>
-    <dt><%= Question.find_by(school_id: @student.school_id, id: response.question_id).question_text %></dt>
+    <dt><%= Question.find_by(school_id: @student.school_id, school_question_id: response.question_id).question_text %></dt>
     <dd><%= response.qanswer %></dd>
   <% end %>
 </dl>
